@@ -26,17 +26,19 @@ Add-PSSnapin VMware.VimAutomation.Core
 
 $vcenterip = read-host "Enter your vcenter ip/hostname (leave blank for localhost)"
 
-if($vcenterip -eq $null){"localhost"}
-if($vcenterip -eq ""){"localhost"}
+if(($vcenterip -eq $null) -or ($vcenterip -eq "")){"localhost"}
 
 $userid = read-host "Enter your userid to run script (admin right) (leave black to use your windows credentials)"
 
-if(($userid -eq $null) -or ($userid -eq ""){
+if(($userid -eq $null) -or ($userid -eq "")){
 connect-viserver localhost -WarningAction SilentlyContinue
 }
 else { $userpass= read-host "Enter your password"
 while (($userpass -eq $null) -or ($userpass -eq "")) {$userpass= read-host "Enter your password (break script if you don't know it :)"}
+
+Connect-VIServer $vcenterip -User $userid -Password $userpass -WarningAction SilentlyContinue
 }
+
 
 Write-Host ""
 Write-Host "identify decoy vm by mac address" -foregroundcolor green
