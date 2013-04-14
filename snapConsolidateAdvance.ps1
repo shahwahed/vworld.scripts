@@ -24,11 +24,13 @@ Add-PSSnapin VMware.VimAutomation.Core
 
 Write-Host "Welcome to the magical snapshot killer" -foregroundcolor green
 
-
+# replace read-host by your esx or vcenter if you want to make it static
 $esx = read-host "Please enter esx name or IP addres (full or short name) you wan't to clean"
 
 # define $userid and $userpass if you doesn't want to ask user/password each time
 
+#$userid = "uncomment this for static user"
+#$userpass = "uncomment this for static password"
 
 
 if(($userid -eq $null) -or ($userid -eq "")){
