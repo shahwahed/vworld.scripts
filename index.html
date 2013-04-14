@@ -39,8 +39,9 @@ If you want to know more about me just check my <a href="http://www.linkedin.com
 
 <h2>Scripts list</h2>
 
-<pre><code>1. snapconsolidate.ps1 : consolide vm who need it
-2. findVmByMac.ps1     : lookout for vm by mac address
+<pre><code>1. snapconsolidate.ps1        : consolidate vm who need it, usefull in crontab like :)
+2. findVmByMac.ps1            : lookout for vm by mac address
+3. snapConsolidateAdvance.ps1 : consolidate vm, helpfull to fix http://kb.vmware.com/kb/2009217
 </code></pre>
 
 <hr><h2><a href="https://github.com/shahwahed/vworld.scripts">snapconsolidate.ps1</a></h2>
@@ -79,7 +80,30 @@ If you want to know more about me just check my <a href="http://www.linkedin.com
 
 <p><code>PowerCLI DRIVE:\PathToScript&gt; findVmByMac.ps1</code></p>
 
-<h2>Authors and Contributors</h2>
+<h2><a href="https://github.com/shahwahed/vworld.scripts">snapConsolidateAdvance.ps1</a></h2>
+
+<p>This script will consolidate snapshot on your vcenter or esx.
+very usefull to fix <a href="http://kb.vmware.com/kb/2009217">vmware kb 2009217</a></p>
+
+<h3>Requirements / Pre-requisites</h3>
+
+<p>This script will require the following components:</p>
+
+<pre><code>1. Windows PowerShell 2.0+
+2. VMware vSphere™ PowerCLI
+</code></pre>
+
+<h3>usage</h3>
+
+<p>Simply launch the script from the PowerCLI prompt and follow the wizard.
+If you want to make user/pass static fill $userid and $userpass
+For fixing esx or vcenter fill $esx variable. </p>
+
+<p><code>PowerCLI DRIVE:\PathToScript&gt; snapConsolidateAdvance.ps1</code></p>
+
+<p>have fun!</p>
+
+<hr><h2>Authors and Contributors</h2>
 
 <p>Author: Shah Mohsin WAHED | <a href="http://www.linkedin.com/pub/shah-mohsin-wahed/1a/750/18a">linkedin profile</a></p>
 
